@@ -7,6 +7,8 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
+//i know this api suck but refactor soon kub
+
 app.get('/api',(req,res,next) => {
     res.send("hello!")
 });
