@@ -29,6 +29,18 @@ app.get('/api/products',(req,res,next) => {
     });
 });
 
+app.get('/api/products/:id',(req,res,next) => {
+    const { params } = req;
+    dbConnection.query('SELECT * from products WHERE id = ?',[params.id],(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 app.post('/api/import',(req,res,next) => {
     const name = req.body.name;
     const quantity = req.body.quantity;
