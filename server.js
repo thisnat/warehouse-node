@@ -29,4 +29,22 @@ app.get('/api/products',(req,res,next) => {
     });
 });
 
+app.post('/api/import',(req,res,next) => {
+    const name = req.body.name;
+    const quantity = req.body.quantity;
+    const price = req.body.price;
+    const safetyStock = req.body.safetyStock;
+    const note = req.body.note;
+
+    dbConnection.query('INSERT INTO products (name,quantity,price,safetyStock,note) VALUES(?,?,?,?,?)',[name,quantity,price,safetyStock,note],(err,result) =>{
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+            console.log(name + " created!");
+        }
+    });
+});
+
 app.listen(3001, () => console.log("Server is running at port 3001"))
