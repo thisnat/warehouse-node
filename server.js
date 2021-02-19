@@ -41,6 +41,19 @@ app.get('/api/products/:id',(req,res,next) => {
     });
 });
 
+app.put('/api/products/:id',(req,res,next) => {
+    const { params } = req;
+    const quantity = req.body.quantity;
+    dbConnection.query('UPDATE products SET quantity = ? WHERE id = ?',[quantity,params.id],(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 app.post('/api/import',(req,res,next) => {
     const name = req.body.name;
     const quantity = req.body.quantity;
