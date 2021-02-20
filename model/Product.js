@@ -1,0 +1,19 @@
+const getAll = (con,callback) => {
+    con.query('SELECT * from products',callback);
+}
+
+const getById = (con,id,callback) => {
+    con.query(`SELECT * from products WHERE id = ${id}`,callback);
+}
+
+const update = (con,id,quantity,callback) => {
+    con.query(`UPDATE products SET quantity = ${quantity} WHERE id = ${id}`,callback);
+}
+
+const create = (con,data,callback) => {
+    con.query("INSERT INTO products (name,quantity,price,safetyStock,note) VALUES (?,?,?,?,?)",[
+        data.name,data.quantity,data.price,data.safetyStock,data.note
+    ],callback);
+}
+
+module.exports = {getAll,getById,update,create};
