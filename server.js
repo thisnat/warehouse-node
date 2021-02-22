@@ -18,7 +18,8 @@ app.post('/api', (req, res, next) => {
 });
 
 const productRouter = require('./routes/ProductRouter');
-app.use('/api/products',productRouter);
-
+const cartRouter = require('./routes/CartRouter')
+app.use('/api/products', productRouter);
+app.use('/api/cart', cartRouter);
 
 app.listen(3001, () => console.log("Server is running at port 3001"))
