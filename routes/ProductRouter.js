@@ -32,12 +32,23 @@ router.put("/:id",(req,res,next) => {
             throw err;
         }
         else{
+            res.send(`${quantity}`);
+        }
+    });
+});
+
+router.delete("/:id",(req,res,next) => {
+    product.remove(db,req.params.id,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
             res.send(result);
         }
     });
 });
 
-router.post("/import",(req,res,next) => {
+router.post("/add",(req,res,next) => {
     const data = req.body;
     product.create(db,data,(err,result) => {
         if(err){

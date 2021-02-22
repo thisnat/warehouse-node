@@ -16,4 +16,8 @@ const create = (con,data,callback) => {
     ],callback);
 }
 
-module.exports = {getAll,getById,update,create};
+const remove = (con,id,callback) => {
+    con.query(`DELETE FROM products WHERE id = ${id}`,callback)
+}
+
+module.exports = {getAll,getById,update,create,remove};
