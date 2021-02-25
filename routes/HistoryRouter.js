@@ -25,6 +25,17 @@ router.get("/:id",(req,res,next) => {
     });
 });
 
+router.get("/getitem/:id",(req,res,next) => {
+    history.getItemById(db,req.params.id,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 router.delete("/:id",(req,res,next) => {
     history.remove(db,req.params.id,(err,result) => {
         if(err){

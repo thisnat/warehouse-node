@@ -14,4 +14,8 @@ const remove = (con,id,callback) => {
     con.query(`DELETE FROM history WHERE id = ${id}`,callback)
 }
 
-module.exports = {getAll,getById,create,remove};
+const getItemById = (con,id,callback) => {
+    con.query(`SELECT * FROM history_item WHERE historyId = ${id}`,callback)
+}
+
+module.exports = {getAll,getById,create,remove,getItemById};
