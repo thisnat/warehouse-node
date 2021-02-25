@@ -55,7 +55,7 @@ router.post("/add",(req,res,next) => {
             throw err;
         }
         else{
-            res.send(result);
+            res.send(`${result.insertId}`);
             console.log(`${data.name} create!`);
         }
     });

@@ -54,8 +54,19 @@ router.post("/add",(req,res,next) => {
             throw err;
         }
         else{
+            res.send(`${result.insertId}`);
+        }
+    });
+});
+
+router.post("/add/item",(req,res,next) => {
+    const data = req.body;
+    history.createItem(db,data,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
             res.send(result);
-            console.log(`${data.id} create!`);
         }
     });
 });
