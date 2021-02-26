@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2021 at 05:29 PM
+-- Generation Time: Feb 26, 2021 at 11:06 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -38,13 +38,6 @@ CREATE TABLE `cart` (
   `createDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `name`, `quantity`, `price`, `safetyStock`, `note`, `productId`, `createDate`) VALUES
-(42, 'asdklklj', 2, 213, 78, 'lnwza555', 3, '2021-02-25 17:07:44');
-
 -- --------------------------------------------------------
 
 --
@@ -68,10 +61,10 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `quantity`, `price`, `safetyStock`, `note`, `createDate`) VALUES
 (3, 'asdklklj', 211, 213, 78, 'lnwza555', '2021-02-23 15:20:27'),
 (4, 'bbno$', 3245, 1337, 600, 'What if elon musk has this on his playlist', '2021-02-23 15:38:34'),
-(7, 'out of stock test', 23, 23, 566, 'alway out of stock lol', '2021-02-23 18:35:08'),
+(7, 'out of stock test', 24, 23, 566, 'alway out of stock lol', '2021-02-23 18:35:08'),
 (8, 'qwope', 2323, 125.25, 4442, 'lol out of stock', '2021-02-23 18:47:55'),
-(14, 'บางอย่าง', 54, 244, 37, 'ซ่ามากๆๆๆๆๆๆ', '2021-02-23 23:34:21'),
-(15, 'qeroiqeroij', 21, 1337, 1, 'wrwefwef', '2021-02-23 23:37:51');
+(14, 'บางอย่าง', 58, 244, 37, 'ซ่ามากๆๆๆๆๆๆ', '2021-02-23 23:34:21'),
+(18, 'qerqeor', 123, 324, 1435, 'qwrkjkweporkowept', '2021-02-26 14:52:08');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +96,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

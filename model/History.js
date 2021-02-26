@@ -1,5 +1,5 @@
 const getAll = (con,callback) => {
-    con.query('SELECT * from history',callback);
+    con.query('SELECT * from history ORDER BY id DESC',callback);
 }
 
 const getById = (con,id,callback) => {
@@ -7,7 +7,7 @@ const getById = (con,id,callback) => {
 }
 
 const create = (con,data,callback) => {
-    con.query("INSERT INTO history (type,note) VALUES (?,?)",[data.type,data.note],callback);
+    con.query("INSERT INTO history (type,note,status) VALUES (?,?,?)",[data.type,data.note,data.status],callback);
 }
 
 const remove = (con,id,callback) => {
