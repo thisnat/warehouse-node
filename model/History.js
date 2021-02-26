@@ -1,5 +1,5 @@
 const getAll = (con,callback) => {
-    con.query('SELECT * from history ORDER BY id DESC',callback);
+    con.query('SELECT * from history',callback);
 }
 
 const getById = (con,id,callback) => {
@@ -23,4 +23,8 @@ const createItem = (con,data,callback) => {
     [data.historyId,data.productId,data.name,data.price,data.quantity],callback);
 }
 
-module.exports = {getAll,getById,create,remove,getItemById,createItem};
+const removeAll = (con,callback) => {
+    con.query(`DELETE FROM cart`,callback)
+}
+
+module.exports = {getAll,getById,create,remove,getItemById,createItem,removeAll};
