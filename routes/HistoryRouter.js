@@ -93,4 +93,16 @@ router.post("/add/item",(req,res,next) => {
     });
 });
 
+router.put("/update/:id",(req,res,next) => {
+    const data = req.body;
+    history.update(db,data,req.params.id,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 module.exports = router;
