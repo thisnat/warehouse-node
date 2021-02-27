@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2021 at 11:26 AM
+-- Generation Time: Feb 27, 2021 at 02:43 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -60,12 +60,12 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `quantity`, `price`, `safetyStock`, `note`, `createDate`) VALUES
 (3, 'asdklklj', 2860, 213, 78, 'lnwza555', '2021-02-23 15:20:27'),
-(4, 'bbno$', 3086, 1337, 600, 'What if elon musk has this on his playlist', '2021-02-23 15:38:34'),
-(7, 'out of stock test', 23, 23, 566, 'alway out of stock lol', '2021-02-23 18:35:08'),
+(4, 'bbno$', 3081, 1337, 600, 'What if elon musk has this on his playlist', '2021-02-23 15:38:34'),
 (8, 'qwope', 2322, 125.25, 4442, 'lol out of stock', '2021-02-23 18:47:55'),
 (14, 'บางอย่าง', 56, 244, 37, 'ซ่ามากๆๆๆๆๆๆ', '2021-02-23 23:34:21'),
-(18, 'qerqeor', 123, 324, 1435, 'qwrkjkweporkowept', '2021-02-26 14:52:08'),
-(19, 'a lot of', 123987, 999, 7, 'เยอะจัดๆอ่ะครับๆๆๆๆ', '2021-02-27 00:01:03');
+(19, 'a lot of', 123982, 999, 7, 'เยอะจัดๆอ่ะครับๆๆๆๆ', '2021-02-27 00:01:03'),
+(20, 'qerqeor', 123, 324, 1435, 'qwrkjkweporkowept', '2021-02-27 20:08:04'),
+(23, 'newza', 125, 23, 1, 'qwrqrw', '2021-02-27 20:41:48');
 
 --
 -- Indexes for dumped tables
@@ -91,13 +91,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
