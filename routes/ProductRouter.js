@@ -118,4 +118,30 @@ router.post("/import", (req, res, next) => {
     })
 });
 
+router.post("/export/reject/:id", (req, res, next) => {
+    history.getItemById(db,req.params.id,(err,result) =>{
+        if (err){
+            throw err;
+        }
+        else{
+            const itemReturn = result.map((item) =>{
+                product.getById(db,item.productId,(err,result) =>{
+                    if(result.length === 0){
+                        let data = {"name":item.name,"quantity":item.quantity,
+                        "price":item.price,"safetyStock":item.safetyStock,"note":item.note}
+                        product.create(db,data,()=>{})
+                    }
+                    else{
+                        product.update(db,item.productId,result[0].quantity + item.quantity,()=>{})
+                    }
+
+                    let status = {"status" : "REJECT"}
+                    history.update(db,status,req.params.id,()=>{})
+                })
+            })
+            res.send(result);
+        }
+    })
+});
+
 module.exports = router;
