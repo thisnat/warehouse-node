@@ -23,8 +23,17 @@ const createItem = (con,data,callback) => {
     [data.historyId,data.productId,data.name,data.price,data.quantity],callback);
 }
 
+const getAllPending = (con,callback) => {
+    con.query(`SELECT * from history WHERE status = "PENDING"`,callback)
+}
+
 const removeAll = (con,callback) => {
     con.query(`DELETE FROM cart`,callback)
 }
 
-module.exports = {getAll,getById,create,remove,getItemById,createItem,removeAll};
+const pendingCount = (con,callback) => {
+    con.query(`SELECT COUNT(*) FROM history WHERE status = "PENDING"`,callback)
+}
+
+module.exports = {getAll,getById,create,remove,
+    getItemById,createItem,removeAll,getAllPending,pendingCount};

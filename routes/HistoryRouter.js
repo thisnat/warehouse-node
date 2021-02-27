@@ -14,6 +14,28 @@ router.get("/",(req,res,next) => {
     });
 });
 
+router.get("/pending",(req,res,next) => {
+    history.getAllPending(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
+router.get("/pending/count",(req,res,next) => {
+    history.pendingCount(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 router.get("/:id",(req,res,next) => {
     history.getById(db,req.params.id,(err,result) => {
         if(err){

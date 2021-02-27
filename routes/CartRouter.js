@@ -56,7 +56,6 @@ router.post("/add",(req,res,next) => {
         }
         else{
             res.send(result);
-            console.log(`${data.name} create!`);
         }
     });
 });
