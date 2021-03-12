@@ -16,6 +16,17 @@ router.get("/", (req, res, next) => {
     });
 });
 
+router.get("/count",(req,res,next) => {
+    product.allCount(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 router.get("/:id", (req, res, next) => {
     product.getById(db, req.params.id, (err, result) => {
         if (err) {

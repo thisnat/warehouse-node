@@ -35,9 +35,13 @@ const pendingCount = (con,callback) => {
     con.query(`SELECT COUNT(*) FROM history WHERE status = "PENDING"`,callback)
 }
 
+const allCount = (con,callback) => {
+    con.query(`SELECT COUNT(*) FROM history`,callback)
+}
+
 const update = (con,data,id,callback) => {
     con.query(`UPDATE history SET status = "${data.status}" WHERE id = ${id}`,callback)
 }
 
 module.exports = {getAll,getById,create,remove,
-    getItemById,createItem,removeAll,getAllPending,pendingCount,update};
+    getItemById,createItem,removeAll,getAllPending,pendingCount,update,allCount};

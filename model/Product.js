@@ -20,4 +20,8 @@ const remove = (con,id,callback) => {
     con.query(`DELETE FROM products WHERE id = ${id}`,callback)
 }
 
-module.exports = {getAll,getById,update,create,remove};
+const allCount = (con,callback) => {
+    con.query(`SELECT COUNT(*) FROM products`,callback)
+}
+
+module.exports = {getAll,getById,update,create,remove,allCount};

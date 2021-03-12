@@ -14,6 +14,17 @@ router.get("/",(req,res,next) => {
     });
 });
 
+router.get("/count",(req,res,next) => {
+    history.allCount(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 router.get("/pending",(req,res,next) => {
     history.getAllPending(db,(err,result) => {
         if(err){
