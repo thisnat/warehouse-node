@@ -27,6 +27,17 @@ router.get("/count",(req,res,next) => {
     });
 });
 
+router.get("/count/ofs",(req,res,next) => {
+    product.allOutOfStock(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 router.get("/:id", (req, res, next) => {
     product.getById(db, req.params.id, (err, result) => {
         if (err) {

@@ -25,6 +25,28 @@ router.get("/count",(req,res,next) => {
     });
 });
 
+router.get("/count/import",(req,res,next) => {
+    history.allImport(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
+router.get("/count/export",(req,res,next) => {
+    history.allExport(db,(err,result) => {
+        if(err){
+            throw err;
+        }
+        else{
+            res.send(result);
+        }
+    });
+});
+
 router.get("/pending",(req,res,next) => {
     history.getAllPending(db,(err,result) => {
         if(err){

@@ -24,4 +24,8 @@ const allCount = (con,callback) => {
     con.query(`SELECT COUNT(*) FROM products`,callback)
 }
 
-module.exports = {getAll,getById,update,create,remove,allCount};
+const allOutOfStock = (con,callback) => {
+    con.query(`SELECT COUNT(*) FROM products WHERE quantity < safetyStock`,callback)
+}
+
+module.exports = {getAll,getById,update,create,remove,allCount,allOutOfStock};
