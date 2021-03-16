@@ -144,7 +144,7 @@ CREATE TABLE `products` (
   `quantity` int(11) NOT NULL DEFAULT 1,
   `price` float NOT NULL DEFAULT 0,
   `safetyStock` int(11) NOT NULL DEFAULT 0,
-  `note` text DEFAULT '-',
+  `note` text,
   `createDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
