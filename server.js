@@ -39,4 +39,8 @@ app.use('/api/products', productRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/history', historyRouter);
 
+process.on('SIGINT', () => {
+    process.exit();
+});
+
 app.listen(3001, () => console.log("Server is running at port 3001"))
