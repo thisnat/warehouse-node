@@ -16,23 +16,23 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.get("/count",(req,res,next) => {
-    product.allCount(db,(err,result) => {
-        if(err){
+router.get("/count", (req, res, next) => {
+    product.allCount(db, (err, result) => {
+        if (err) {
             throw err;
         }
-        else{
+        else {
             res.send(result);
         }
     });
 });
 
-router.get("/count/ofs",(req,res,next) => {
-    product.allOutOfStock(db,(err,result) => {
-        if(err){
+router.get("/count/ofs", (req, res, next) => {
+    product.allOutOfStock(db, (err, result) => {
+        if (err) {
             throw err;
         }
-        else{
+        else {
             res.send(result);
         }
     });
@@ -182,7 +182,15 @@ router.post("/import/accept/:id", (req, res, next) => {
                 product.create(db, data, () => { })
             } else {
                 product.getById(db, result[0].productId, (err, rProduct) => {
-                    product.update(db, result[0].productId, rProduct[0].quantity + result[0].quantity, () => { })
+                    if (rProduct[0] != null) {
+                        product.update(db, result[0].productId, rProduct[0].quantity + result[0].quantity, () => { })
+                    } else {
+                        let data = {
+                            "name": result[0].name, "quantity": result[0].quantity,
+                            "price": result[0].price, "safetyStock": result[0].safetyStock, "note": result[0].note
+                        }
+                        product.create(db, data, () => { })
+                    }
                 })
             }
             let status = { "status": "ACCEPT" }
