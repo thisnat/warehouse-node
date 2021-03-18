@@ -197,7 +197,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
-(2, 'admin', 'warehouse', 'admin');
+(1, 'admin', 'warehouse', 'admin'),
+(2, 'admin2', 'warehouse', 'admin');
 
 --
 -- Indexes for dumped tables
