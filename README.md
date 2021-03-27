@@ -1,5 +1,8 @@
 # warehouse-node
 backend of [warehouse project](https://github.com/thisnat/warehouse-spring)
+## requirement
+- Node.js
+- MySQL
 ## setup
 - use `warehouse.sql` to create database tables
 ```bash
