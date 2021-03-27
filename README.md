@@ -10,9 +10,3 @@ npm start
 ## database environment
 - `db.js`  use your database environment (user,password)
 - `warehouse.sql`  warehouse project's database tables and records
-
-## admin user
-username | password
------------- | -------------
-admin | warehouse
-admin2 | warehouse
