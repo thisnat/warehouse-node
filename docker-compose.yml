@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+
+  mysql:
+    build:
+      context: .
+      dockerfile: mysql.dockerfile
+    ports:
+      - "3306:3306"
+    restart: always
+
+  node:
+    build:
+      context: .
+      dockerfile: node.dockerfile
+    environment:
+      MYSQL_HOST: mysql
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+    command: ["./wait-for-it.sh", "mysql:3306", "--", "npm", "start"]
