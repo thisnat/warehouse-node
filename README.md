@@ -13,6 +13,7 @@ npm i
 npm start
 ```
 #### docker
+- with docker password in `db.js` must be "" (empty)
 ```bash
 docker-compose up -d
 ```
